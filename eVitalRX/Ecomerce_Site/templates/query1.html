@@ -1,0 +1,70 @@
+{% extends 'admin_base.html' %}
+{% block admin_side %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid rgb(7, 61, 2);">User wise - Product wise Ordering Quantity with Total Item Values</h5>
+        <div class="container-fluid">
+            <table class="table table-bordered table-sm" id="example">
+                <thead>
+                <tr>
+                <th>User</th>
+                <th>Product</th>
+                <th>Total Quantity</th>
+                <th>Total Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for user, products in user_product_data.items %}
+                    {% for product_name, data in products.items %}
+                    <tr>
+                        <td>{{ user }}</td>
+                        <td>{{ product_name }}</td>
+                        <td>{{ data.quantity }}</td>
+                        <td>{{ data.total_value }}</td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+<!-- <html>
+<head>
+    <title>User-Product Summary</title>
+</head>
+<body>
+    <h1>User-Product Ordering Summary</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Product</th>
+                <th>Total Quantity</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user, products in user_product_data.items %}
+                {% for product_name, data in products.items %}
+                <tr>
+                    <td>{{ user }}</td>
+                    <td>{{ product_name }}</td>
+                    <td>{{ data.quantity }}</td>
+                    <td>{{ data.total_value }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html> -->

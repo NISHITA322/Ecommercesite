@@ -1,0 +1,36 @@
+{% extends 'admin_base.html' %}
+{% block admin_side %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="card shadow">
+    <div class="card-body">
+        <h5 class="p-2" style="border-bottom: 2px solid rgb(7, 61, 2);">
+            <div class="container-fluid">
+            <table class="table table-bordered table-sm" id="example">Query 2. Weekly Orders Analysis for First Quarter</h5>
+                <thead>
+                    <tr>
+                        <th>Week Number</th>
+                        <th>Total Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week, count in weekly_orders %}
+                    <tr>
+                        <td>Week {{ week }}</td>
+                        <td>{{ count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+{% extends 'admin_base.html' %}
+{% block admin_side  %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Quantity Summary</title>
+</head>
+<body>
+    <div class="card shadow">
+        <div class="card-body">
+            <h5 class="p-2" style="border-bottom: 2px solid rgb(7, 61, 2);">
+                <div class="container-fluid">
+                <table class="table table-bordered table-sm" id="example"> Products whose Quantity greater than 7 and not sold yet</h5>
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Total Orders</th>
+                            <th>Total Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_name, details in product_data.items %}
+                        <tr>
+                            <td>{{ product_name }}</td>
+                            <td>{{ details.total_orders }}</td>
+                            <td>{{ details.total_quantity }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+</body>
+</html>
+{% endblock %}

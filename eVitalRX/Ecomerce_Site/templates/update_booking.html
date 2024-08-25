@@ -1,0 +1,21 @@
+<!-- yourapp/templates/yourapp/update_booking.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Booking</title>
+</head>
+<body>
+    <h1>Update Booking</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="created">Created Date (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="created" name="created" value="{{ booking.created|date:'Y-m-d H:i:s' }}">
+        <br><br>
+        <label for="updated">Updated Date (YYYY-MM-DD HH:MM:SS):</label>
+        <input type="text" id="updated" name="updated" value="{{ booking.updated|date:'Y-m-d H:i:s' }}">
+        <br><br>
+        <button type="submit">Update</button>
+    </form>
+    
+</body>
+</html>

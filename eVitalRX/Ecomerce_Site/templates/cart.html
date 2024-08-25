@@ -1,0 +1,54 @@
+{% load static %}
+
+<head>
+    <title>My Cart</title>
+</head>
+{% include 'navigation.html' %}
+{% csrf_token %}
+<div class="container-fluid">
+    <div class="container">
+        <h2 style="font-family:roman;font-size:bold">
+            My Cart
+            <a href="/user-product/0/" class="btn btn-warning " style="float:right">Continue Shopping</a>   
+            <a href="/booking/" class="btn btn-info mr-2" style="float:right">Buy Now</a>
+        </h2>
+        <table class="table table-bordered" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in products %}
+                <tr>
+                    <td>
+                        <img class="img-thumbnail" src="{{ item.product.image_url }}" alt="product" style="width:100px;height:100px">
+                    </td>
+                    <td><a href="/product-detail/{{ item.product.id }}/">{{ item.product.name }}</a></td>
+                    <td>{{ item.product.price }}</td>
+                    <td style="width:15%">
+                        <div class="input-group">
+                            <a href="/incredecre/{{ item.product.id }}/?action=decre" class="btn btn-warning pull-left">-</a>
+                            <input type="text" class="cart-plus-minus-box" style="width:30%;border:1px solid grey" value="{{ item.quantity }}" readonly />
+                            <a href="/incredecre/{{ item.product.id }}/?action=incre" class="btn btn-warning pull-right">+</a>
+                        </div>
+                    </td>
+                    <td>{{ item.total }}</td>
+                    <td>
+                        <a href="/deletecart/{{ item.product.id }}/" class="btn btn-danger"><i class="fa fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4"></td>
+                    <td colspan="2" id="total-price">{{ total_price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

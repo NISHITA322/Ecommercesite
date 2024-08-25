@@ -1,0 +1,45 @@
+{% extends 'navigation.html' %}
+{% block nav %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #b7deed; /* Light background color */
+            color: #343a40; /* Dark text color */
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mx-auto">
+                <h2>Our Mission</h2>
+                <p>At ShopMaster, our mission is to provide a seamless and enjoyable shopping experience. We offer a wide range of products across various categories, ensuring quality and affordability. Our dedicated team is committed to delivering exceptional customer service and making online shopping easy and accessible for everyone.</p>
+                <p>Thank you for choosing ShopMaster. We look forward to serving you!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
+</body>
+</html>
