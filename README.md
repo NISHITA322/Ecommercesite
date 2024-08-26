@@ -27,3 +27,7 @@ Task 2: Queries's output
 Query 1 : Find user-wise, product-wise ordering quantity with total item value.
 
 
+
+
+
+
