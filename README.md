@@ -2,6 +2,8 @@ E-Commerce Website Project
 
 This project is an E-Commerce website developed using Django, where users can register, browse products, add them to their cart, and place orders. Admins have CRUD capabilities for managing categories and products. The website also features user authentication and order tracking.
 
+Project Name: eVitalRX <br>
+Application Name: Ecomerce_Site
 To access the data for <br>
 Admin - username : admin, password : admin <br>
 To access the data for <br>
